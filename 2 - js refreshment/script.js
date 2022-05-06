@@ -103,4 +103,58 @@ class Parent1{
   p2.printName();
   p2.printGender();
   
-   
+  const numbers = [1,2,3,4,5];
+  const newNumber = [...numbers,25];
+  console.log(newNumber);
+  const person = {
+  name:'rayyan',
+  roll:25,
+  };
+  const person2  ={
+  ...person,
+  gender:'Male'
+  };
+
+  console.log(person2);
+
+  // rest operators
+
+  const filter = (...args)=>{
+   return args.filter(el => el ===3);
+  }
+
+  console.log(filter(1,2,3,4,5));
+
+  //destructuring of array
+console.log('rayyan');
+
+[num1, , num2] = [1, 2, 3];
+console.log(num1, num2);
+
+
+const person4 = {
+  name: 'rayyan',
+  roll: 25,
+};
+
+//it does not copy one object into another object  its only pointing
+const person5 = person4;
+
+person4.name = 'faizan';
+
+console.log(person5);
+
+// copy one object into another object
+
+const person6 = { ...person4 };
+person6.name = 'rayyan';
+console.log(person6.name);
+
+// array refresher
+const arr1 = [1,2,3,4,5];
+
+ const arr2 = arr1;
+
+ const arr3 = arr2.map(number => number*2);
+ console.log(arr2);
+ console.log(arr3);
