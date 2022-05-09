@@ -1,16 +1,16 @@
 import './Expenseitems.css'
-function Name1(){
-    const expenseDate = new Date(2022,5,8);
-    const expenseTitle = 'Car Insurance';
-    const expenseAmount = 294.67;
-    return (<div className="expense-item">
-        <div> {expenseDate.toISOString()}</div>
+import ExpenseDate  from './ExpenseDate';
+import Card from './Card'
+function Name1(props){
+    
+    return (<Card className="expense-item">
         <div className="expense-item__description">
-            <h2>{expenseTitle}</h2>
-            <div className="expense-item__price">{expenseAmount}</div>
+            <ExpenseDate date = {props.date}></ExpenseDate>
+            <h2>{props.title}</h2>
+            <div className="expense-item__price">{props.amount}</div>
         </div>
 
-    </div>);
+    </Card>);
 }
 
 export default Name1;
