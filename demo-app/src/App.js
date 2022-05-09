@@ -1,6 +1,6 @@
 import logo from './logo.svg';
-import Name1 from './components/Expenseitems'
-import ExpenseItemDisplay from './components/ExpenseItemsDisplay'
+import Name1 from './components/Expenses/Expenseitems'
+import ExpenseItemDisplay from './components/Expenses/ExpenseItemsDisplay'
 import './App.css';
 
 function App() {
