@@ -1,6 +1,7 @@
 import logo from './logo.svg';
-import Name1 from './components/Expenses/Expenseitems'
-import ExpenseItemDisplay from './components/Expenses/ExpenseItemsDisplay'
+import Name1 from './components/Expenses/Expenseitems';
+import ExpenseItemDisplay from './components/Expenses/ExpenseItemsDisplay';
+import NewExpense from './components/NewExpense/NewExpense';
 import './App.css';
 
 function App() {
@@ -23,6 +24,7 @@ amount:120,
 date:new Date(2022,9,8)}]
   return (
     <div className="App">
+      <NewExpense></NewExpense>
     <ExpenseItemDisplay expenses={expenses}></ExpenseItemDisplay>
   
     </div>
