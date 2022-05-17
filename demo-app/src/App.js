@@ -3,10 +3,9 @@ import Name1 from './components/Expenses/Expenseitems';
 import ExpenseItemDisplay from './components/Expenses/ExpenseItemsDisplay';
 import NewExpense from './components/NewExpense/NewExpense';
 import './App.css';
+import React ,{useState} from 'react';
 
-function App() {
-
-  const expenses =[{id:'el1',
+const dummyArray =[{id:'el1',
 title:'toilet paper',
 amount:120,
 date:new Date(2022,4,8)},
@@ -21,12 +20,25 @@ date:new Date(2022,10,8)},
 {id:'el4',
 title:'banna cream',
 amount:120,
-date:new Date(2022,9,8)}]
+date:new Date(2022,9,8)}];
+
+function App() {
+
+  const [initialArray,setInitialArray] = useState(dummyArray);
+
+
+const newExpense = expenseData =>{
+  console.log(expenseData);
+  console.log(initialArray);
+  setInitialArray(previouseData => {
+    console.log(previouseData);
+    return [...previouseData,expenseData];
+  });
+}
   return (
     <div className="App">
-      <NewExpense></NewExpense>
-    <ExpenseItemDisplay expenses={expenses}></ExpenseItemDisplay>
-  
+      <NewExpense getNewExpense={newExpense}></NewExpense>
+    <ExpenseItemDisplay expenses={initialArray}></ExpenseItemDisplay>
     </div>
   )
 }

@@ -2,7 +2,7 @@ import {React} from "react";
 import './ExpenseForm.css';
 import { useState } from 'react';
 
-const ExpenseForm = ()=>{
+const ExpenseForm = (props)=>{
 
     // 1.This is first way using state with multiple values
     const [enterTitle,setEnterdTitle] = useState('');
@@ -62,23 +62,27 @@ const ExpenseForm = ()=>{
             amount:enterAmount,
             date:new Date(enterDate)
         };
-
         console.log(expenseData);
+        props.SaveExpenseData(expenseData);
+        // setEnterdTitle('');
+        // setEnterdAmount('');
+        // setEnterdDate('');
+
 
     }
         return(<form onSubmit={submitHandler}>
             <div className="new-expense__controls">
                 <div className="new-expense__control">
                     <label>Title</label>
-                    <input type="text" onChange={titleChangeHandler}></input>
+                    <input type="text" value={enterTitle} onChange={titleChangeHandler}></input>
                 </div>
                 <div className="new-expense__control">
                     <label>Amount</label>
-                    <input type="number" min="0.01" step='0.01' onChange={amountChangeHandler}></input>
+                    <input type="number" value={enterAmount} min="0.01" step='0.01' onChange={amountChangeHandler}></input>
                 </div>
                 <div className="new-expense__control">
                     <label>Date</label>
-                    <input type="date" min="2019-01-01" max="2022-12-31" onChange={dateChangeHandler}></input>
+                    <input type="date" min="2019-01-01" value={enterDate}  max="2022-12-31" onChange={dateChangeHandler}></input>
                 </div>
             </div>
             <div className="new-expense__actions">

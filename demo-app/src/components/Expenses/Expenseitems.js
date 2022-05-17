@@ -1,6 +1,7 @@
 import './Expenseitems.css'
 import React,{useState} from 'react';
 import ExpenseDate  from './ExpenseDate';
+import ExpensesFilter from './ExpenseFilter'
 import Card from '../UI/Card'
 function Name1(props){
 
@@ -13,7 +14,11 @@ function Name1(props){
                 
             
     };
-    return (<Card className="expense-item">
+    return (
+        <div>
+   
+    
+    <Card className="expense-item">
         <div className="expense-item__description">
             <ExpenseDate date = {props.date}></ExpenseDate>
             <h2>{title}</h2>
@@ -21,7 +26,10 @@ function Name1(props){
         </div>
         <button onClick={clickHandler}> Change Tile</button>
 
-    </Card>);
+    </Card>
+    
+    </div>
+    );
 }
 
 export default Name1;
